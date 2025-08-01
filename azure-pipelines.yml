@@ -2,3 +2,4 @@ pool: Azure Pipelines
 steps:
 - bash: echo hello world
 - bash: echo this is second change
+- powershell: Get-$PSVersion
