@@ -2,21 +2,18 @@ pool:
  VmImage: 'Windows-Latest'
 variables:
   buildConfiguration: 'Building the code'
-  DotnetSdkVersion: '8.x'
-  NugetSdkversion: 'Latest'
+  DotnetSdkVersion: '6.x'
+ 
 
 steps:
   - task: UseDotNet@2
-    displayName: 'Use .NET SDK $(dotnetSdkVersion)'  # Removed extra quote
-    inputs: 
-      packageType: 'sdk'  # Added to specify using SDK
-      version: '$(dotnetSdkVersion)'
-
-  - task: DotNetCoreCLI@2
-    displayName: 'Restore project dependencies'
+    displayName: 'Use .NET SDK $(DotnetSdkVersion)'
     inputs:
-      command: 'restore'
-      projects: '**/*.csproj'
+      packageType: 'sdk'
+      version: '$(DotnetSdkVersion)'
+
+  - script: dotnet restore
+    displayName: 'Restore project dependencies using dotnet CLI'
 
   - task: DotNetCoreCLI@2
     displayName: 'Build the project - $(buildConfiguration)'
