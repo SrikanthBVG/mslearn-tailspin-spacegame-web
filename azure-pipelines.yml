@@ -1,4 +1,5 @@
-
+pool:
+ VmImage: 'Windows-Latest'
 variables:
   buildConfiguration: 'Building the code'
   DotnetSdkVersion: '8.x'
