@@ -2,6 +2,7 @@
 variables:
   buildConfiguration: 'Building the code'
   DotnetSdkVersion: '8.x'
+  NugetSdkversion: 'Latest'
 
 steps:
   - task: UseDotNet@2
