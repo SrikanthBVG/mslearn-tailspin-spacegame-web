@@ -1,9 +1,7 @@
-Pool:Azure Pipelines
-  vmImage: 'ubuntu-latest'
 
 variables:
   buildConfiguration: 'Building the code'
-  dotnetSdkVersion: '8.x'
+  DotnetSdkVersion: '8.x'
 
 steps:
   - task: UseDotNet@2
